@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+/**
+ * Very simple BFS 
+ */
 public class ZOJ1091 {
 
     private static BufferedReader READER = new BufferedReader(
