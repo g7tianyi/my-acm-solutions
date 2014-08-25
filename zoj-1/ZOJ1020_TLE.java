@@ -15,7 +15,7 @@ import java.util.Map;
  * This version use DFS as well, but the standard DFS based varies, 
  * the efficiency shows enormous difference.
  */
-public class ZOJ1020 {
+public class ZOJ1020_TLE {
 
     private static BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
 
