@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Trie is fast !
+ */
 public class ZOJ1050 {
 
     private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
