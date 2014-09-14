@@ -47,7 +47,7 @@ int main() {
             memset(red, 0, sizeof(red));
             for (i = 0; i < len; ++i) {
                 if (tmp[i] == '('
-                        && (i == 0 || tmp[i - 1] != '-' || abs(pair[i] - i) == 2)) {
+                        && (i == 0 || tmp[i - 1] != '-' || abs(pair[i] - i) == 2)) { // This is the key code
                     red[i] = red[pair[i]] = true;
                     updated = true;
                 }
