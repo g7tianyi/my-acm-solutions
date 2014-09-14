@@ -7,7 +7,7 @@
 char buf[1000005];
 int fail[1000005];
 
-int main(void) {
+int main() {
     int N, CASES = 1;
     while (scanf("%d", &N), N) {
         printf("Test case #%d\n", CASES++);
