@@ -10,6 +10,8 @@
 #define INPUT  PROGID".in"
 #define OUTPUT PROGID".out"
 
+// Trie, DFS
+
 const int MAX_LEN = 12;
 const int ALPHABET = 26;
 const char map[8][3] = {
