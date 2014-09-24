@@ -1,5 +1,9 @@
 /**
  * POJ 1989, The Cow Lineup
+ *
+ * Divide the sequence into subsequences as much as possible,
+ * make sure each subsequence hold all numbers ranging from
+ * 1 to K.
  */
 #include <cstdio>
 #include <cstring>
