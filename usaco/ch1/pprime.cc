@@ -7,7 +7,7 @@
 #include <cmath>
 
 #ifdef LOCAL_MODE
-#define PROGID "input"
+#define PROGID "usaco"
 #else
 #define PROGID "pprime"
 #endif
