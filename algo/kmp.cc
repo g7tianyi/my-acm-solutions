@@ -1,4 +1,6 @@
-
+/**
+ * POJ KMP problems: 3461 2752 2406
+ */
 int next[MAX_N];
 // The following illustration comes from http://www.cnblogs.com/yjiyjige/p/3263858.html
 //   0   k j-k j       0   k j-k j
