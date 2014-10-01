@@ -7,9 +7,10 @@
  * Well, not likely this, but this is the kernel equation
  */
 #include <cstdio>
-#include <cstring>
 
-const int MAX_N = 102;
+enum {
+    MAX_N = 102, INF = 1 << 30
+};
 
 inline int min(int a, int b) {
     return a < b ? a : b;
@@ -28,18 +29,20 @@ int main() {
             scanf("%d", &value[i]);
             sum[i] = sum[i - 1] + value[i];
         }
-        memset(dp, -1, sizeof(dp));
-
-        int temp;
+        for (int i = 1; i <= N; i++) {
+            for (int j = i + 1; j <= N; j++) {
+                dp[i][j] = INF;
+            }
+        }
         for (int L = 1; L <= N - 1; L++) { // try each range length
             for (int i = 1; i <= N - L; i++) { // try the start of current range
                 int j = i + L; // end of current range
                 for (int k = i; k <= j; k++) { // try the order of going to stage
-                    temp = value[i] * (k - i) + (k - i + 1) * (sum[j] - sum[k])
-                            + dp[i + 1][k] + dp[k + 1][j];
-                    if (dp[i][j] == -1 || dp[i][j] < temp)
-                        dp[i][j] = temp;
+                    dp[i][j] = min(dp[i][j],
+                            value[i] * (k - i) + (k - i + 1) * (sum[j] - sum[k])
+                                    + dp[i + 1][k] + dp[k + 1][j]);
                 }
+                //printf("dp[%d][%d]=%d\t", i, j ,dp[i][j]);
             }
             //printf("\n");
         }
