@@ -7,6 +7,7 @@
 
 ##### Floyd-Warshall 算法
 感謝：http://www.cnblogs.com/obama/p/3348202.html
+
 Floyd-Warshall 是一个动态规划的算法。我們将顶点编号，假设依次为0,1,2…n-1,现在假设DP[i][j][k]表示从i出发，结束于j的满足经过结点的编号至多为k的最短路径，由此性质易知，在易知DP[i][j][k]时，若要求DP[i][j][k+1]，有两种情况要考虑：
  - DP[i][j][k+1]所表征的路径经过结点k+1，此时DP[i][j][k+1] = DP[i][k+1][k] + DP[k+1][j][k]
  - DP[i][j][k+1]所表征的路径不经过结点k+1,此时DP[i][j][k+1] = DP[i][j][k]，不用更新表项
@@ -25,8 +26,8 @@ Floyd-Warshall 是一个动态规划的算法。我們将顶点编号，假设�
 
 分析3：初始状况的分析，初始状况相当于不经过任何结点，对于任意两个顶点 i , j ,自然有:
 
- - 若 i ， j 之间有边相连，则 DP[i][j] = cost(i,j)
- - 反之 ，DP[i][j] = INF
+ - 若 i, j 之间有边相连，则 DP[i][j] = cost(i,j)
+ - 反之, DP[i][j] = INF
 
 分析4 ： 如何记录路径，设path[i][j]表示 i  到 j 的最短路径中 i 的后继顶点，初始情况下，若i ,j 之间有边相连，path[i][j] = j ,否则，path[i][j] = –1,在不断收敛的过程中，若当前最短路径有变化，path[i][j] = path[i][k+1]
 
@@ -34,10 +35,10 @@ Floyd-Warshall 是一个动态规划的算法。我們将顶点编号，假设�
 ----
 
 ####POJ 
-- Dijkstra      : 2387 2253 1797 3268 
-- Bellman-Ford  : 1860 3259 
-- Floyd-Warshall: 1502 3660 2240 
-- SPFA          : 1511 
+- Dijkstra 2387 2253 1797 3268 
+- Bellman-Ford 1860 3259 
+- Floyd-Warshall 1502 3660 2240 
+- SPFA 1511 
 
 
 ####HDU 
