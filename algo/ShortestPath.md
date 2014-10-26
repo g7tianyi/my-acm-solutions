@@ -34,10 +34,10 @@ Floyd-Warshall 是一个动态规划的算法。我們将顶点编号，假设�
 ----
 
 ####POJ 
-- Dijkstra, 2387 2253 1797 3268 
-- Bellman-Ford 1860 3259 
-- Floyd 1502 3660 2240 
-- SPFA 1511 
+- Dijkstra      : 2387 2253 1797 3268 
+- Bellman-Ford  : 1860 3259 
+- Floyd-Warshall: 1502 3660 2240 
+- SPFA          : 1511 
 
 
 ####HDU 
