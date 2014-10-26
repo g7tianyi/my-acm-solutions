@@ -2,8 +2,8 @@ Tarjan算法
 =========
 感谢
 ----
-- http://noalgo.info/476.html，讲解很清晰
-- http://webcache.googleusercontent.com/search?q=cache:Z0crE7hGNPwJ:hi.baidu.com/foreverlin1204/item/090542f7f22578ca521c264f+&cd=1&hl=en&ct=clnk&gl=us，感谢提供习题集和参考思路 (直接打不开，只能贴Google Cache, Sorry~)
+- 讲解很清晰 => http://noalgo.info/476.html
+- 感谢提供习题集和参考思路 (直接打不开，只能贴Google Cache, Sorry~) => http://webcache.googleusercontent.com/search?q=cache:Z0crE7hGNPwJ:hi.baidu.com/foreverlin1204/item/090542f7f22578ca521c264f+&cd=1&hl=en&ct=clnk&gl=us
 
 Tarjan算法基于后序DFS和并查集。算法从根节点root开始搜索，每次递归搜索所有子树，然后处理跟当前节点相关的所有查询。
 
