@@ -36,7 +36,7 @@ int main() {
         }
     }
 
-    // try split from i, [0...i] asc,  (i...N) desc
+    // try split from i, [0...i] increase,  (i...N) decrease
     int maxlen = 0;
     for (int i = 0; i < soldiers - 1; ++i) {
         for (int j = i + 1; j < soldiers; ++j) {
