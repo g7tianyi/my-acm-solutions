@@ -23,7 +23,7 @@ struct state {
 state dp[MAX_STATE];
 bool visit[MAX_STATE];
 
-void output(int status) {
+void print_path(int status) {
     int curr = dp[status].prev ^ status;
     int index = 0; // index of the remaining 1
     curr >>= 1;
@@ -32,7 +32,7 @@ void output(int status) {
         curr >>= 1;
     }
     if (dp[status].prev != 0) {
-        output(dp[status].prev);
+        print_path(dp[status].prev);
     }
     printf("%s\n", course[index].name);
 }
@@ -76,7 +76,7 @@ int main() {
         }
 
         printf("%d\n", dp[num_state].penalty);
-        output(num_state);
+        print_path(num_state);
     }
     return 0;
 }
