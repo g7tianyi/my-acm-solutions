@@ -159,6 +159,7 @@ void mergeSort(ListNode* &head) {
 测试
 ----
 ```C++
+#include <cstdio>
 #include <random>
 #include <ctime>
 
