@@ -59,6 +59,24 @@ ListNode* reverseRecursion(ListNode* head) {
     return head;
 }
 ```
+```java
+// Java Version
+public ListNode reverseRecursion(ListNode head) {
+    if (head == null) {
+        return null; 
+    }
+    if (head.next == null) {
+        return head;
+    }
+
+    ListNode rest = head.next;
+    ListNode reversedRest = reverseRecursion(rest);
+    rest.next = head;
+    head.next = null;
+    return reversedRest;
+}
+```
+
  - Test
 ```C++
 ListNode nodes[10];
