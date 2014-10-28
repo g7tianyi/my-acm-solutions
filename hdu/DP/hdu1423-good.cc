@@ -34,7 +34,7 @@ int main() {
                 dp[curr][j] = dp[prev][j];
                 if (arr1[i] > arr2[j] && premax < dp[prev][j]) {
                     // next time when we found a j' meets arr1[i] == arr2[j']
-                    // the j can be an option to j' to get the longest common increasing subsequence
+                    // the j can be an option for j' to get the longest common increasing subsequence
                     // since we have arr2[j'] == arr1[i] > arr2[j]
                     // nice optimization
                     premax = dp[prev][j]; // dp[i-1][j]
