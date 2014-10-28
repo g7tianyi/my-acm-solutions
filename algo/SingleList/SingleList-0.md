@@ -176,10 +176,3 @@ ListNode *detectCycle(ListNode* head) {
 > https://github.com/g7tianyi/my-acm-solutions/blob/master/leetcode/linked-list-cycle.cc
 
 > https://github.com/g7tianyi/my-acm-solutions/blob/master/leetcode/linked-list-cycle-ii.cc
-
-- 有环链表的反转
-----
-待续
-
-
-
