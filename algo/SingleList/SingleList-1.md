@@ -1,6 +1,7 @@
 单链表总结2: 链表排序
 =========
-- 链表定义及辅助函数
+链表定义及辅助函数
+----
 ```C++
 struct ListNode {
     int value;
@@ -16,7 +17,8 @@ static inline void swap(int& a, int& b) {
     a ^= b;
 }
 ```
-- 冒泡排序
+冒泡排序
+----
 ```C++
 void bubbleSort(ListNode* head) {
     if (head == NULL || head->next == NULL) {
@@ -36,7 +38,8 @@ void bubbleSort(ListNode* head) {
     }
 }
 ```
-- 插入排序
+插入排序
+----
 ```C++
 void insertionSort(ListNode* &head) {
     if (head == NULL || head->next == NULL) {
@@ -65,7 +68,8 @@ void insertionSort(ListNode* &head) {
     }
 }
 ```
-- 选择排序
+选择排序
+----
 ```C++
 void selectionSort(ListNode* head) {
     ListNode *slow, *fast, *mini;
@@ -81,7 +85,8 @@ void selectionSort(ListNode* head) {
     }
 }
 ```
-- 归并排序
+归并排序
+----
 ```C++
 // 这个最风骚了，单链表排序默认应该就是归并表现最优秀吧
 static ListNode* merge(ListNode* head1, ListNode* head2) {
@@ -146,11 +151,13 @@ void mergeSort(ListNode* &head) {
     head = merge(former, latter);
 }
 ```
-- 快速排序
+快速排序
+----
 ```C++
 // TODO: 比较考验功力呀...
 ```
-- 测试
+测试
+----
 ```C++
 #include <random>
 #include <ctime>
@@ -206,4 +213,3 @@ int main() {
     return 0;
 }
 ```
-
