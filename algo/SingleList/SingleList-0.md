@@ -1,4 +1,4 @@
-单链表总结
+单链表总结1: 反转及环的问题
 =========
 ```C++
 // Firstly, define the (Singly) List Node
@@ -178,11 +178,6 @@ https://github.com/g7tianyi/my-acm-solutions/blob/master/leetcode/linked-list-cy
 https://github.com/g7tianyi/my-acm-solutions/blob/master/leetcode/linked-list-cycle-ii.cc
 
 - 有环链表的反转
-----
-待续
-
-
-- 链表排序
 ----
 待续
 
