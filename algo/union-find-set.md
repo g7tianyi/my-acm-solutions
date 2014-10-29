@@ -1,3 +1,6 @@
+并查集的實現模板
+---
+```C++
 struct disjoint_set {
     inline void init(int size) {
         for (int i = 0; i < size; ++i) {
@@ -34,4 +37,5 @@ private:
     static const int MAX_NODE = 10000;
     int parent[MAX_NODE], count[MAX_NODE];
 };
+```
 
