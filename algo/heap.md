@@ -1,3 +1,6 @@
+堆的實現模板
+---
+```C++
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -40,4 +43,5 @@ private:
     Compare compare;
     std::vector<T> container;
 };
+```
 
