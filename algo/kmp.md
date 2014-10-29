@@ -21,7 +21,6 @@ void get_next(char str[], int len) {
         }
     }
 }
-
 int kmp_search(char text[], char pattern[]) {
     int i = 0, j = 0;
     while (i < strlen(text) && j < strlen(pattern)) {
