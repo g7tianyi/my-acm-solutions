@@ -1,8 +1,8 @@
-/**
- * POJ KMP problems: 3461 2752 2406
- */
+KMP的實現模板
+---
+> 致謝： http://www.cnblogs.com/yjiyjige/p/3263858.html
+```C++
 int next[MAX_N];
-// The following illustration comes from http://www.cnblogs.com/yjiyjige/p/3263858.html
 //   0   k j-k j       0   k j-k j
 //   |   | |   |       |   | |   |
 //   A B C A B C D     A B C A B C D
@@ -22,7 +22,7 @@ void get_next(char str[], int len) {
     }
 }
 
-int kmp(char text[], char pattern[]) {
+int kmp_search(char text[], char pattern[]) {
     int i = 0, j = 0;
     while (i < strlen(text) && j < strlen(pattern)) {
         if (j == -1 || text[i] == pattern[j]) {
@@ -37,4 +37,5 @@ int kmp(char text[], char pattern[]) {
         return -1;
     }
 }
+```
 
