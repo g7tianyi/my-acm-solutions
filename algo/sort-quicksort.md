@@ -31,6 +31,52 @@
  *
  */
 
+// simplified version
+/**
+ * idea, based on divide-and-conquer method
+ * 1) selection. select a number as the pivot
+ * 2) partition. put all numbers larger than pivot to its right, and smaller to the left
+ * 3) recursion. repeat step 1) and 2) for the left and right range
+ */
+void quick_sort(int array[], int first, int last) {
+    if (first < last) {
+        int i = first, j = last, pivot = array[first];
+        while (i < j) {
+            //        i                             j
+            //        |                             |
+            // array: 42 74 90 37 59 39 47 90 53 18 66
+            // pivot: 42
+            while (i < j && array[j] >= pivot) {
+                j--;
+            }
+            if (i < j) {
+                array[i++] = array[j];
+            }
+            //           i                       j
+            //           |                       |
+            // array: 18 74 90 37 59 39 47 90 53 18 66
+            // pivot: 42
+            while (i < j && array[i] < pivot) {
+                i++;
+            }
+            if (i < j) {
+                array[j--] = array[i];
+            }
+            //           i                    j
+            //           |                    |
+            // array: 18 74 90 37 59 39 47 90 53 74 66
+            // pivot: 42
+
+            // i < j, keep looping
+        }
+        array[i] = pivot;
+        quick_sort(array, first, i - 1);
+        quick_sort(array, i + 1, last);
+    }
+}
+
+// sophisticated version below
+
 template<typename T>
 inline void swap(T& lhs, T& rhs) {
     T tmp = lhs;
