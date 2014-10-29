@@ -25,7 +25,19 @@ void preOrderRecursion(TreeNode* root) {
         preOrderRecursion(root->right);
     }
 }
-// iterative style
+
+/**
+ * iterative style
+ * 
+ * idea:
+ * for any node curr,
+ * 1) access it (print its value), and push it into the stack
+ * 2) check curr's left child,
+ *    2.1) if it's NULL, pop stack and let curr points to curr's right child
+ *    2.2) otherwise, let curr points to curr's left child
+ *    then go to step 1)
+ * 3) if curr is NULL and stack is empty, traverse complete
+ */
 void preOrderIteration(TreeNode* root) {
     std::stack<TreeNode*> stack;
     TreeNode* curr = root;
@@ -54,7 +66,18 @@ void inOrderRecursion(TreeNode* root) {
         inOrderRecursion(root->right);
     }
 }
-// iterative style
+
+/**
+ * iterative style
+ * 
+ * idea:
+ * for any node curr,
+ * 1) if curr's left child is not NULL, push curr into stack and let curr points
+ *    to curr's left child, go to 1) again
+ * 2) if curr't left child is NULL, pop stack, access the poped TreeNode, and let
+ *    curr points to curr's right child;
+ * 3) if curr is NULL and stack is empty, traverse complete.
+ */ 
 void inOrderIteration(TreeNode* root) {
     std::stack<TreeNode*> stack;
     TreeNode* curr = root;
