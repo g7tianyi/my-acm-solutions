@@ -5,6 +5,12 @@
 - 狀態壓縮: POJ 1185 2411 3254
 - HDU 2955 1864 1231 
 
+字符串有關的DP問題
+----
+基本屬於Palindrome, parentheses, bracket相關的一類.
+
+- POJ 1141 1159 2192 3267 
+
 區間動態規劃
 ----
 > 致謝： http://www.cnblogs.com/zsboy/archive/2013/03/08/2950261.html
