@@ -29,7 +29,10 @@ int main() {
         }
 
         memset(dp, false, sizeof(dp));
-        // DP[i][j] records the possibility of using the first i numbers to reach j
+        // DP[i][j] records the possibility of using the first i numbers to reach j (0 <= j < K)
+        // (a + b) mod K = ( (a mod K) + (b mod K) ) mod K
+        // (a - b) mod K = ( (a mod K) - (b mod K) ) mod K
+        // ==> dp[i][j] = dp[i-1][j] && dp[i][mod(j +/- arr[i])]
         dp[1][mod(arr[1])] = true;
         for (int i = 2; i <= N; ++i) {
             for (int j = K; j >= 0; --j) {
