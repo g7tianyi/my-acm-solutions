@@ -10,8 +10,7 @@
 
 至於訓練題，以前做了一些，不記得了...
 
-> POJ [1745](http://poj.org/problem?id=1745) 
-
+> POJ [1745](http://poj.org/problem?id=1745) [3628](http://poj.org/problem?id=3628)
 
 字符串相關的DP問題
 ----
