@@ -7,7 +7,7 @@
 區間和相關的DP問題
 ----
 
-> POJ [1050](http://poj.org/problem?id=1050)
+> POJ [1050](http://poj.org/problem?id=1050) [2479](http://poj.org/problem?id=2479)
 
 公共字串相關的DP問題
 ----
