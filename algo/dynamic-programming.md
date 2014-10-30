@@ -1,15 +1,23 @@
-訓練題
-----
-
-- POJ 1260 2533 1836 3267 3176 1080 1159 
-- 狀態壓縮: POJ 1185 2411 3254
-- HDU 2955 1864 1231 
-
-字符串有關的DP問題
+字符串相關的DP問題
 ----
 基本屬於Palindrome, parentheses, bracket相關的一類.
 
-- POJ 1141 1159 2192 3267 
+- POJ [1141](http://poj.org/problem?id=1141) [1159](http://poj.org/problem?id=1159) [1458](http://poj.org/problem?id=1458) [2192](http://poj.org/problem?id=2192) [3267](http://poj.org/problem?id=3267) 
+
+區間和相關的DP問題
+----
+
+- POJ [1234](http://poj.org/problem?id=1234) [1050](http://poj.org/problem?id=1050)
+
+公共字串相關的DP問題
+----
+
+- POJ [1458](http://poj.org/problem?id=1458) [2127](http://poj.org/problem?id=2127)
+
+最長遞增/減序列問題
+----
+
+- POJ [1952](http://poj.org/problem?id=1952) [2533](http://poj.org/problem?id=2533) [3616](http://poj.org/problem?id=3616)
 
 區間動態規劃
 ----
