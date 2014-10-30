@@ -1,3 +1,18 @@
+動態規劃問題小結
+====
+
+動態規劃博大精深，我等菜鳥根本說不明道不盡哎...
+
+揹包問題
+---
+
+首先，無論新手還是高手，都應該讀讀dd大神的神作[揹包九講](http://love-oriented.com/pack/pack2alpha1.pdf)吧我覺得...
+
+至於訓練題，以前做了一些，不記得了...
+
+> POJ [1745](http://poj.org/problem?id=1745) 
+
+
 字符串相關的DP問題
 ----
 基本屬於Palindrome, parentheses, bracket相關的一類.
