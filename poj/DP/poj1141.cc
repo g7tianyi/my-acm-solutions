@@ -48,11 +48,20 @@ int main() {
             int j = i + k;
             dp[i][j] = MAX_INF;
             if ((buf[i] == '(' && buf[j] == ')')
-                    || (buf[i] == '[' && buf[j] == ']')) {
+                    || (buf[i] == '[' && buf[j] == ']')) { // (#)
                 // matched
+                // ...(([][])...
+                //    |     |
+                //    i     j
                 dp[i][j] = dp[i + 1][j - 1];
                 pos[i][j] = -1;
             }
+            // why the following loop must run ?
+            //   ...()([][])...
+            //      |      |
+            //      i      j
+            // dp[i+1][j-1] = 2 (#) give us dp[i][j] = 2
+            // but as we can see, dp[i][j] = 0 is the best option
             for (int s = i; s < j; ++s) { // split
                 if (dp[i][j] > dp[i][s] + dp[s + 1][j]) {
                     dp[i][j] = dp[i][s] + dp[s + 1][j];
