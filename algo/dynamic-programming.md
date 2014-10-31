@@ -16,7 +16,10 @@
 ----
 基本屬於Palindrome, parentheses, bracket相關的一類.
 
-> POJ [1141](http://poj.org/problem?id=1141) [1159](http://poj.org/problem?id=1159) [1458](http://poj.org/problem?id=1458) [2192](http://poj.org/problem?id=2192) [3267](http://poj.org/problem?id=3267) [2955](http://poj.org/problem?id=2955) 
+> Common String DP. [poj3267](http://poj.org/problem?id=3267)
+> Subsequence. [poj 1458](http://poj.org/problem?id=1458)  
+> Palindrome. [poj 3280](http://poj.org/problem?id=3280) [poj 1159](http://poj.org/problem?id=1159)
+> Brackets. [poj 1141](http://poj.org/problem?id=1141) [poj 2192](http://poj.org/problem?id=2192) [poj 2955](http://poj.org/problem?id=2955)
 
 區間和相關的DP問題
 ----
