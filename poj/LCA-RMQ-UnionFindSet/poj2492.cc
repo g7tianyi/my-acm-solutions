@@ -4,8 +4,6 @@
  * A Bug's Life
  *
  * Union-find-set.
- *
- * Compare it with poj 1141
  */
 
 #include <cstdio>
