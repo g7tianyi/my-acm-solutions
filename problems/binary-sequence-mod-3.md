@@ -1,6 +1,8 @@
 二进制序列对3求余的问题
 ====
-Proposed by [Hunter](https://github.com/xuhao417347761). 給定一個二進制序列，可能很長很長，求這個序列表示的數字對3求余的結果。
+Proposed by [Hunter](https://github.com/xuhao417347761). 
+
+給定一個二進制序列，可能很長很長，求這個序列表示的數字對3求余的結果。
 
 > "101" -> 3 % 3 = 0
 
