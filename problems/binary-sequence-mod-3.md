@@ -12,6 +12,8 @@ Proposed by [Hunter](https://github.com/xuhao417347761).
 
 求解
 ----
+[kenny的方案](https://github.com/philoprove/revolutionary-road/blob/master/mind_garden/mod3.md)，进制转换的思路。
+
 ## 數論結論
 
 > (A * B) % M = [ (A % M) * (B % M) ] % M
