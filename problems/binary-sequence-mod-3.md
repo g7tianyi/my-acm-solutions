@@ -9,8 +9,11 @@ Proposed by [Hunter](https://github.com/xuhao417347761). 給定一個二進制�
 求解
 ----
 ## 數論結論
+
 > (A * B) % M = [ (A % M) * (B % M) ] % M
 > (A + B) % M = [ (A % M) + (B % M) ] % M
+
+所以不僅僅對3適用吧，任意一個數字應該都可以。
 
 ###代碼
 ```C++
