@@ -478,8 +478,7 @@ void levelOrder(avltree::AVLTreeNode<T>* root) {
 #include <ctime>
 
 enum {
-    TEST_SIZE = 12,
-    MAX_NUM = 100,
+    TEST_SIZE = 12, MAX_NUM = 100,
 };
 
 int main() {
@@ -487,25 +486,27 @@ int main() {
     std::random_device rd;
     std::mt19937 g(rd());
 
-    splaytree::SplayTree<int> stree;
+    avltree::AVLTree<int> avltree;
 
-    // 1) insertion
+    // 1) insert
     std::vector<int> vec;
     for (int i = 0, num; i < TEST_SIZE; ++i) {
         num = (rand() % MAX_NUM) + 1;
         vec.push_back(num);
-        stree.insert(num);
+        avltree.insert(num);
     }
 
-    // 2) preOrder, inOrder, postOrder
-    stree.inOrder();
-    stree.preOrder();
-    stree.postOrder();
+    // 2) in/pre/post/level order
+    avltree::AVLTreeNode<int>* root = avltree.get_root();
+    printf("in order: "), inOrder(root), printf("\n");
+    printf("pre order: "), preOrder(root), printf("\n");
+    printf("post order: "), postOrder(root), printf("\n");
+    printf("level order: "), levelOrder(root), printf("\n");
 
     // 3) find
     std::shuffle(vec.begin(), vec.end(), g);
     for (int i = 0; i < TEST_SIZE; ++i) {
-        splaytree::TreeNode<int>* node = stree.find(vec[i]);
+        avltree::AVLTreeNode<int>* node = avltree.find(vec[i]);
         printf("find %d: ", vec[i]);
         if (node) {
             printf("succeed\n");
@@ -513,27 +514,27 @@ int main() {
             printf("failed\n");
         }
     }
-    printf("-----------------------\n");
+    printf("------------------------\n");
 
     // 4) predecessor, successor
     for (int i = 0; i < TEST_SIZE; ++i) {
-        printf("predecessor of %d: %d\n", vec[i], stree.predecessor(vec[i]));
-        printf("predecessor of %d: %d\n", vec[i] - 1, stree.predecessor(vec[i] - 1));
-        printf("predecessor of %d: %d\n", vec[i] + 1, stree.predecessor(vec[i] + 1));
+        printf("predecessor of %d: %d\n", vec[i], avltree.predecessor(vec[i]));
+        printf("predecessor of %d: %d\n", vec[i] - 1, avltree.predecessor(vec[i] - 1));
+        printf("predecessor of %d: %d\n", vec[i] + 1, avltree.predecessor(vec[i] + 1));
 
-        printf("successor of %d: %d\n", vec[i], stree.successor(vec[i]));
-        printf("successor of %d: %d\n", vec[i] - 1, stree.successor(vec[i] - 1));
-        printf("successor of %d: %d\n", vec[i] + 1, stree.successor(vec[i] + 1));
+        printf("successor of %d: %d\n", vec[i], avltree.successor(vec[i]));
+        printf("successor of %d: %d\n", vec[i] - 1, avltree.successor(vec[i] - 1));
+        printf("successor of %d: %d\n", vec[i] + 1, avltree.successor(vec[i] + 1));
     }
-    printf("-----------------------\n");
+    printf("------------------------\n");
 
     // 5) remove
     std::shuffle(vec.begin(), vec.end(), g);
     for (int i = 0; i < TEST_SIZE; ++i) {
-        stree.remove(vec[i]);
+        avltree.remove(vec[i]);
         printf("remove %d\n", vec[i]);
     }
-    printf("-----------------------\n");
+    printf("------------------------\n");
 
     return 0;
 }
