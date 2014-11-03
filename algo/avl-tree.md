@@ -11,6 +11,16 @@ AVL樹作為歷史上第一個被發明出來的平衡樹，優雅的旋轉和�
 編程實現
 ----
 ```C++
+/**
+ * 主要注意以下幾個函數的實現，旋轉的關鍵盡在於此了
+ *
+ * AVLTreeNode<T>* ll_rotate(AVLTreeNode<T>* k2);
+ * AVLTreeNode<T>* rr_rotate(AVLTreeNode<T>* k1);
+ * AVLTreeNode<T>* lr_rotate(AVLTreeNode<T>* k3);
+ * AVLTreeNode<T>* rl_rotate(AVLTreeNode<T>* k3);
+ * AVLTreeNode<T>* rebalance(AVLTreeNode<T>* k0);
+ */
+
 #include <iostream>
 
 namespace avltree {
