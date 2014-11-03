@@ -29,6 +29,9 @@ public:
     }
 
     T pop() {
+        if (values.empty()) {
+            return T(); // throw exception
+        }
         T value = values.top();
         values.pop();
         minimums.pop();
@@ -36,6 +39,9 @@ public:
     }
 
     T findMin() {
+        if (values.empty()) {
+            return T(); // throw exception
+        }
         return values.top();
     }
 
