@@ -30,7 +30,7 @@ public:
 
     T pop() {
         if (values.empty()) {
-            return T(); // throw exception
+            return T(); // better throw exception
         }
         T value = values.top();
         values.pop();
@@ -40,7 +40,7 @@ public:
 
     T findMin() {
         if (values.empty()) {
-            return T(); // throw exception
+            return T(); // better throw exception
         }
         return values.top();
     }
