@@ -1,0 +1,12 @@
+DP, boring, no energy to write code...
+
+Let F(i, j) return a list of all placement for a square of width i and height j, e.g.,
+    F(1, 1) = { (1 1) }
+    F(1, 3) = { (1 3) }
+    F(2, 2) = { (2 1), (1 4) }
+    F(3, 4) = { (4 1), (3 3, 1 3), (2 2, 1 4) ...}  
+
+F(i, j) = { F(i',j') + F(i', j - j') + F (i - i', j), F(i', j') + F(i, j - j') + F(i - j', j') }
+
+This can cover all size length.
+           
