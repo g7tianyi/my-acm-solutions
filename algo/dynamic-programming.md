@@ -3,8 +3,10 @@
 
 動態規劃博大精深，我等菜鳥根本說不明道不盡哎...
 
-揹包問題
----
+###好題
+> POJ [2033](http://poj.org/problem?id=2033)
+
+###揹包問題
 
 首先，無論新手還是高手，都應該讀讀dd大神的神作[揹包九講](http://love-oriented.com/pack/pack2alpha1.pdf)吧我覺得...
 
@@ -12,8 +14,8 @@
 
 > POJ [1745](http://poj.org/problem?id=1745) [3628](http://poj.org/problem?id=3628)
 
-字符串相關的DP問題
-----
+###字符串相關的DP問題
+
 基本屬於Palindrome, parentheses, bracket相關的一類.
 
 > Common String DP. [POJ 3267](http://poj.org/problem?id=3267)
@@ -24,23 +26,20 @@
 
 > Brackets. [POJ 1141](http://poj.org/problem?id=1141), [POJ 2192](http://poj.org/problem?id=2192), [POJ 2955](http://poj.org/problem?id=2955)
 
-區間和相關的DP問題
-----
+###區間和相關的DP問題
 
 > POJ [1050](http://poj.org/problem?id=1050) [2479](http://poj.org/problem?id=2479)
 
-公共字串相關的DP問題
-----
+###公共字串相關的DP問題
 
 > POJ [1458](http://poj.org/problem?id=1458) [2127](http://poj.org/problem?id=2127)
 
-最長遞增/減序列問題
-----
+###最長遞增/減序列問題
 
 > POJ [1952](http://poj.org/problem?id=1952) [2533](http://poj.org/problem?id=2533) [3616](http://poj.org/problem?id=3616)
 
-區間動態規劃
-----
+###區間動態規劃
+
 > 致謝： http://www.cnblogs.com/zsboy/archive/2013/03/08/2950261.html
 
 区间动态规划问题一般都是考虑，对于每段区间，他们的最优值都是由几段更小区间的最优值得到，是分治思想的一种应用，将一个区间问题不断划分为更小的区间直至一个元素组成的区间，枚举他们的组合 ，求合并后的最优值。
