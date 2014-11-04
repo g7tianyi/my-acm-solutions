@@ -3,8 +3,9 @@
 
 動態規劃博大精深，我等菜鳥根本說不明道不盡哎...
 
-###好題
-> POJ [2033](http://poj.org/problem?id=2033)
+###基础题/好題
+> [POJ 2033](http://poj.org/problem?id=2033) 
+> 矩陣乘法：[POJ 1651](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj1651.cc) 
 
 ###揹包問題
 
