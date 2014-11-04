@@ -21,6 +21,8 @@ Cuckoo Hash 基本思想是Double Hashing，以插入為例：
 
 ![cuckoo-hash-2](https://github.com/g7tianyi/my-acm-solutions/blob/master/images/cuckoo-hash-2.png)
 
+可以比較生動地感覺到，在rehash發生時，左邊這個桶裡面的數據不提地往右邊的桶里“跳”，要是右邊有衝突了，又往左邊跳。
+
 值得注意的是，插入的第2、3步很有可能導致死循環，Cuckoo Hashing的建議是設置一個閾值，如果被踢出的次數超過這個閾值，停止循環（或遞歸）。然後看你是懶(比如我)還是勤快了，一般工業強度的設計里：
 
  - 或者重新分配更大的Hash桶，如std::vector一樣，不夠了就double現在的空間
