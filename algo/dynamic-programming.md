@@ -12,7 +12,7 @@
 
 至於訓練題，以前做了一些，不記得了...
 
-> POJ [1745](http://poj.org/problem?id=1745) [3628](http://poj.org/problem?id=3628)
+> 0-1背包： [POJ 1015](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj1015.cc) [POJ 1745](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj1745.cc) [POJ 3628](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj3268.cc) 
 
 ###字符串相關的DP問題
 
