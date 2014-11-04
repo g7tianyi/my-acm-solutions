@@ -1,5 +1,11 @@
 Summary of Binary Search
 =========
+0) Interesting~ binary search optimization in ACM
+----
+> [poj 3273](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DataStructure/poj3273.cc)
+
+> [poj 3258](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DataStructure/poj3258.cc)
+
 1) The basic problem
 ----
 1. Open or closed range?
