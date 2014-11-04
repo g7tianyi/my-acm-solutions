@@ -3,7 +3,7 @@
 
 #Cuckoo哈希
 ----
-> 致謝： 馬大叔以及 http://en.wikipedia.org/wiki/Cuckoo_hashing
+> 致謝： [馬大叔](http://users.cis.fiu.edu/~weiss/)以及 http://en.wikipedia.org/wiki/Cuckoo_hashing
 
 建議先看以上的資料再聽我這沒水準的唧唧歪歪。
 
@@ -21,7 +21,7 @@ Cuckoo Hash 基本思想是Double Hashing，以插入為例：
 
 ![cuckoo-hash-2](https://github.com/g7tianyi/my-acm-solutions/blob/master/images/cuckoo-hash-2.png)
 
-值得注意的是，第2、3步很有可能導致死循環，Cuckoo Hashing的建議是設置一個閾值，如果被踢出的次數超過這個閾值，停止循環（或遞歸）。然後看你是懶(比如我)還是勤快了，一般工業強度的設計里：
+值得注意的是，插入的第2、3步很有可能導致死循環，Cuckoo Hashing的建議是設置一個閾值，如果被踢出的次數超過這個閾值，停止循環（或遞歸）。然後看你是懶(比如我)還是勤快了，一般工業強度的設計里：
 
  - 或者重新分配更大的Hash桶，如std::vector一樣，不夠了就double現在的空間
  - 替換兩個新的Hash函數，如：馬叔叔的書中又一個接口叫HashFamily。這樣的代碼很靈活，我很喜歡~
@@ -38,6 +38,7 @@ public interface HashFamily<T> {
 ```C++
 /**
  * simple implementation of cuckoo hasher
+ * no deletion yet, sorry
  * will provide a STL style implementation when I'm available
  *
  * @g7tianyi
