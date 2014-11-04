@@ -6,6 +6,8 @@ Summary of Binary Search
 
 > [poj 3258](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DataStructure/poj3258.cc)
 
+> [poj 3122](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DataStructure/poj3122.cc)
+
 1) The basic problem
 ----
 1. Open or closed range?
