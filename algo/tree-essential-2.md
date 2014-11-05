@@ -167,9 +167,10 @@ __tree_node <T>* successor_in_bst(__tree_node <T>* tree, const T& value) {
 #樹的最大值與最小值
 ----
 
-如果是二叉隨機樹，那個還是樹的遍歷算法，不多說了。
+- 如果是二叉隨機樹，那個還是樹的遍歷算法，不多說了。
+- 如果是二叉搜索樹，就見下方代碼。
 
-如果是二叉搜索樹，就見下方代碼。
+LeetCode: [Validate Binary Search Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/leetcode/validate-binary-search-tree.cc)
 
 ```C++
 template<typename T>
@@ -189,5 +190,58 @@ __tree_node <T>* min_elem(__tree_node <T>* tree) {
 }
 ```
 
+#二叉搜索樹的合法性檢查
+----
 
+搜索樹需要每個節點滿足左子樹都比自己小，右子樹都比自己大，所以算法例程就是基於此了。
 
+```C++
+template<typename T>
+bool validate_bst(__tree_node <T>* tree, const T& min_elem, const T& max_elem) {
+    if (tree == NULL) {
+        return true;
+    }
+
+    if (tree->value < min_elem || tree->value > max_elem) {
+        return false;
+    }
+
+    return validate_bst(tree->left, min_elem, tree->value)
+            && validate_bst(tree->right, tree->value, max_elem);
+}
+
+// in order traverse, the in order sequence should be ordered
+template<typename T>
+bool validate_bst(__tree_node <T>* tree) {
+    std::deque<__tree_node <T>*> queue;
+    std::stack<__tree_node <T>*> stack;
+    __tree_node <T>* curr = tree;
+    while (curr || !stack.empty()) {
+        while (curr) {
+            stack.push(curr);
+            curr = curr->left;
+        }
+        if (!stack.empty()) {
+            curr = stack.top();
+            stack.pop();
+            queue.push_back(curr);
+            curr = curr->right;
+        }
+    }
+
+    if (!queue.empty()) {
+        __tree_node <T>* prev = queue.front();
+        queue.pop_front();
+        while(!queue.empty()) {
+            curr = queue.front();
+            if (curr->value < prev->value) {
+                return false;
+            }
+            prev = curr;
+            queue.pop_front();
+        }
+    }
+
+    return true;
+}
+```
