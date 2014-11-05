@@ -57,7 +57,7 @@ unsigned min_depth(__tree_node <T>* tree) {
     queue.push_back(tree), queue.push_back(NULL);
     unsigned depth = 1;
     while (!queue.empty()) {
-        __tree_node <T>* curr = queue.fron();
+        __tree_node <T>* curr = queue.front();
         queue.pop_front();
 
         if (curr) {
