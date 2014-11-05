@@ -1,6 +1,16 @@
-KMP的實現模板
+KMP小結
 ---
 > 致謝： http://www.cnblogs.com/yjiyjige/p/3263858.html
+
+##訓練題推薦
+
+> [POJ 1961](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/String/poj1961.cc)
+> [POJ 2752](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/String/poj2752.cc)
+> [POJ 3461](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/String/poj3461.cc)
+> [POJ 2406](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/String/poj2406.cc)
+
+
+##代碼模板
 ```C++
 int next[MAX_N];
 //   0   k j-k j       0   k j-k j
