@@ -51,7 +51,7 @@ gcd(M, Q) = d > 1, 即：M ＝ a * d, Q = b * d，可得:
 
 ## 开放寻址法(Open Addressing)
 
-當衝突發生時，產生一個探查序列，檢索沿著這個序列進行。最簡單的產生探索序列的辦法自然就是線性掃描 (linear probing)了，即直接檢查下一個單元，偽代碼基本如下：
+當衝突發生時，產生一個探查序列，檢索沿著這個序列進行。最簡單的產生探索序列的辦法自然就是線性掃描 ([linear probing](http://en.wikipedia.org/wiki/Linear_probing)了，即直接檢查下一個單元，偽代碼基本如下：
 ```
 for i in [1, M):
 begin
