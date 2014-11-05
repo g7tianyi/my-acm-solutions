@@ -373,6 +373,171 @@ unsigned max_depth_iteration(__tree_node <T>* tree) {
 }
 
 template<typename T>
+bool validate_bst(__tree_node <T>* tree, const T& min_elem, const T& max_elem) {
+    if (tree == NULL) {
+        return true;
+    }
+
+    if (tree->value < min_elem || tree->value > max_elem) {
+        return false;
+    }
+
+    return validate_bst(tree->left, min_elem, tree->value)
+            && validate_bst(tree->right, tree->value, max_elem);
+}
+
+// in order traverse, the in order sequence should be ordered
+template<typename T>
+bool validate_bst(__tree_node <T>* tree) {
+    std::deque<__tree_node <T>*> queue;
+    std::stack<__tree_node <T>*> stack;
+    __tree_node <T>* curr = tree;
+    while (curr || !stack.empty()) {
+        while (curr) {
+            stack.push(curr);
+            curr = curr->left;
+        }
+        if (!stack.empty()) {
+            curr = stack.top();
+            stack.pop();
+            queue.push_back(curr);
+            curr = curr->right;
+        }
+    }
+
+    if (!queue.empty()) {
+        __tree_node <T>* prev = queue.front();
+        queue.pop_front();
+        while(!queue.empty()) {
+            curr = queue.front();
+            if (curr->value < prev->value) {
+                return false;
+            }
+            prev = curr;
+            queue.pop_front();
+        }
+    }
+
+    return true;
+}
+
+//
+// in theory, predecessor and successor also has 3 types:
+//  1) pre-order predecessor and successor
+//  2) in-order predecessor and successor
+//  3) post-order predecessor and successor
+// in practical, in-order predecessor and successor is of highest value
+// since the deletion operation depends on it
+//
+
+
+// find the predecessor of the specified value
+// the value must be in the tree, otherwise we return NULL
+template<typename T>
+__tree_node <T>* predecessor_in_bst(__tree_node <T>* tree, const T& value) {
+    __tree_node <T>* curr = tree; // curr and parent pointer
+    std::deque<__tree_node <T>*> ancestors;
+    ancestors.push_back(NULL);
+    while (curr) {
+        if (value == curr->value) {
+            break;
+        }
+        ancestors.push_back(curr);
+        if (value < curr->value) {
+            curr = curr->left;
+        } else {
+            curr = curr->right;
+        }
+    }
+
+    if (curr == NULL) { // value not exists in the tree
+        return NULL;
+    }
+
+    // 1) if curr has a left child, the rightmost child of curr's left child is the predecessor
+    // 2) otherwise, we trace back to the root, the first right ancestor is the predecessor
+    // 3) if no such ancestor exists, then curr has no predecessor
+    if (curr->left) {
+        // has left child
+        curr = curr->left;
+        while (curr->right) {
+            curr = curr->right;
+        }
+        return curr;
+    } else {
+        // has no left child
+        __tree_node <T>* parent = ancestors.back();
+        ancestors.pop_back();
+        while (parent && parent->right != curr) {
+            curr = parent;
+            parent = ancestors.back();
+            ancestors.pop_back();
+        }
+        return parent;
+    }
+}
+
+// find the successor of the specified value
+// the value must be in the tree, otherwise we return NULL
+template<typename T>
+__tree_node <T>* successor_in_bst(__tree_node <T>* tree, const T& value) {
+    __tree_node <T>* curr = tree; // curr and parent pointer
+    std::deque<__tree_node <T>*> ancestors;
+    ancestors.push_back(NULL);
+    while (curr) {
+        if (value == curr->value) {
+            break;
+        }
+        ancestors.push_back(curr);
+        if (value < curr->value) {
+            curr = curr->left;
+        } else {
+            curr = curr->right;
+        }
+    }
+
+    if (curr == NULL) { // value not exists in the tree
+        return NULL;
+    }
+
+    // 1) if curr has a right child, the leftmost child of curr's right child is the successor
+    // 2) otherwise, we trace back to the root, the first left ancestor is the successor
+    // 3) if no such ancestor exists, then curr has no successor
+    if (curr->right) {
+        curr = curr->right;
+        while (curr->left) {
+            curr = curr->left;
+        }
+        return curr;
+    } else {
+        __tree_node <T>* parent = ancestors.back();
+        ancestors.pop_back();
+        while (parent && parent->left != curr) {
+            curr = parent;
+            parent = ancestors.back();
+            ancestors.pop_back();
+        }
+        return parent;
+    }
+}
+
+template<typename T>
+__tree_node <T>* max_elem(__tree_node <T>* tree) {
+    while (tree && tree->right) {
+        tree = tree->right;
+    }
+    return tree;
+}
+
+template<typename T>
+__tree_node <T>* min_elem(__tree_node <T>* tree) {
+    while (tree && tree->left) {
+        tree = tree->left;
+    }
+    return tree;
+}
+
+template<typename T>
 void release_tree(__tree_node <T>* tree) {
     if (tree == NULL) {
         return;
