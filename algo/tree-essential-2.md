@@ -1,4 +1,4 @@
-樹問題小結：前驅與後繼、最小值與最大值
+樹問題小結：前驅與後繼、最小值與最大值、合法性檢查
 ====
 
 #前驅與後繼問題
@@ -163,4 +163,31 @@ __tree_node <T>* successor_in_bst(__tree_node <T>* tree, const T& value) {
 - 若是父母的右孩子，則後繼是父母
 - 若是父母的左孩子，且父母無右子樹，則後繼是父母
 - 若是父母的左孩子，父母有右子樹，則後繼是父母右子樹的最先訪問到的節點
+
+#樹的最大值與最小值
+----
+
+如果是二叉隨機樹，那個還是樹的遍歷算法，不多說了。
+
+如果是二叉搜索樹，就見下方代碼。
+
+```C++
+template<typename T>
+__tree_node <T>* max_elem(__tree_node <T>* tree) {
+    while (tree && tree->right) {
+        tree = tree->right;
+    }
+    return tree;
+}
+
+template<typename T>
+__tree_node <T>* min_elem(__tree_node <T>* tree) {
+    while (tree && tree->left) {
+        tree = tree->left;
+    }
+    return tree;
+}
+```
+
+
 
