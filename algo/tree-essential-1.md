@@ -1,6 +1,6 @@
 樹問題小結：基礎1
 ====
-樹的基礎知識我懶得寫了，請直接參考[馬叔叔](http://users.cis.fiu.edu/~weiss/)的書。這裡主要總結關於樹的一些或基本或重要或有趣的問題（不包括高級樹形結構如 [AVL Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/avl-tree.md), [Splay Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/splay-tree.md)等），主要包括：
+樹的基礎知識我懶得寫了，請直接參考[馬叔叔](http://users.cis.fiu.edu/~weiss/)的書。這裡主要總結關於樹的一些或基本或重要或有趣的問題（不包括高級樹形結構如 [AVL Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/avl-tree.md), [Splay Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/splay-tree.md) 等等），主要包括：
 
  - **樹的建立**
     * 建隨機樹
@@ -71,7 +71,7 @@ inline default_value_type random_tree_value() {
 ```
 
 ## 樹的建立
-```
+```C++
 #include <functional>
 #include <iostream>
 #include <iterator>
