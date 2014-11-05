@@ -17,11 +17,17 @@
 >  4. If hashtable[h[k]] is empty
 >
 >        &nbsp;&nbsp;&nbsp;&nbsp;4.1 Insert key k at hashtable[h[k]]
+>
 >        &nbsp;&nbsp;&nbsp;&nbsp;4.2 Stop
+>
 >    Else
+>
 >        &nbsp;&nbsp;&nbsp;&nbsp;4.3 The key space at hashtable[h[k]] is occupied, so we need to find the next available key space
+>
 >        &nbsp;&nbsp;&nbsp;&nbsp;4.4 Increment j
+>
 >        &nbsp;&nbsp;&nbsp;&nbsp;4.5 Compute new hash function h[k] = ( k + j * j ) % SIZE
+>
 >        &nbsp;&nbsp;&nbsp;&nbsp;4.6 Repeat Step 4 till j is equal to the SIZE of hash table
 >
 >  5. The hash table is full
