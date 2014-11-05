@@ -12,8 +12,11 @@
 > ![enter image description here](https://github.com/g7tianyi/my-acm-solutions/blob/master/images/quadratic_probing_1.png)
 
 >  1. Get the key k
+>
 >  2. Set counter j = 0
+>
 >  3. Compute hash function h[k] = k % SIZE
+>
 >  4. If hashtable[h[k]] is empty
 >
 >        &nbsp;&nbsp;&nbsp;&nbsp;4.1 Insert key k at hashtable[h[k]]
