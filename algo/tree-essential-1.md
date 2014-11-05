@@ -16,15 +16,15 @@
      * 判斷兩棵樹是否完全一樣
      * 判斷兩棵樹是否同構（難）
      * 判斷兩棵樹互為鏡像
- - **元素的查找**
- - **元素的刪除**
- - **樹的節點數問題**
-      * 計算葉子結點
+ - **[樹的節點數問題](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-3.md)**
+      * 計算葉子結點的數目
       * 計算非葉子結點的數目
  - **樹的最小深度與最大深度問題**
- - **二叉搜索樹的合法性檢查**
- - **二叉搜索樹的前驅、後繼問題**
- - **二叉搜索樹的min(), max(), kMin(), kMax()問題**
+ - **[二叉搜索樹的合法性檢查](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-2.md)**
+ - **[二叉搜索樹的前驅、後繼問題](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-2.md)**
+ - **[元素的查找](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-4.md)**
+ - **[元素的刪除](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-4.md)**
+ - **二叉搜索樹的最值問題, 以及kMin(), kMax()問題**
  - **Threaded-Tree的問題（難）**
 
 *還有以後補充...*
