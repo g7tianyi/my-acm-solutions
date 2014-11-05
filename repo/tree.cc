@@ -1,6 +1,8 @@
 /**
  * tree operations summary
- *
+ * 
+ * https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-1.md
+ * 
  * @g7tianyi
  */
 
