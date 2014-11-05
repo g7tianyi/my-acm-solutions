@@ -47,7 +47,7 @@ struct __tree_node {
 };
 
 enum insert_type {
-    TO_LEFT, TO_RIGHT
+    TO_LEFT, TO_RIGHT, SKIP
 };
 
 enum binary_tree_type {
@@ -73,6 +73,9 @@ template<typename Argument>
 struct binary_search_tree_optioner: insert_optioner<Argument> {
     inline insert_type operator()(const Argument& __curr_arg,
             const Argument& __new_arg) const {
+        if (__curr_arg == __new_arg) {
+            return SKIP;
+        }
         return __curr_arg > __new_arg ? TO_LEFT : TO_RIGHT;
     }
 };
@@ -152,20 +155,21 @@ void level_order(__tree_node <Type>* root,
     }
 }
 
-
-
 //
 // create tree below
 //
 
 template<typename T, typename Optioner>
-void __insert_tree(__tree_node <T>* root, __tree_node <T>* node,
+bool __insert_tree(__tree_node <T>* root, __tree_node <T>* node,
         const Optioner& optioner) {
     if (root == NULL || node == NULL) {
         return;
     }
     __tree_node <T>* curr = root;
     while (true) {
+        if (optioner(curr->value, node->value) == SKIP) {
+            return false;
+        }
         if (optioner(curr->value, node->value) == TO_LEFT) {
             if (curr->left) {
                 curr = curr->left;
@@ -182,6 +186,7 @@ void __insert_tree(__tree_node <T>* root, __tree_node <T>* node,
             }
         }
     }
+    return true;
 }
 
 template<typename InputIterator, typename Optioner = random_optioner<
@@ -194,7 +199,9 @@ __tree_node <typename InputIterator::value_type>* create_tree(InputIterator firs
     __tree_node <value_type>* root = new __tree_node <value_type>(*first);
     while (++first != last) {
         __tree_node <value_type>* node = new __tree_node <value_type>(*first);
-        __insert_tree(root, node, optioner);
+        if (!__insert_tree(root, node, optioner)) {
+           delete node;
+        }
     }
     return root;
 }
