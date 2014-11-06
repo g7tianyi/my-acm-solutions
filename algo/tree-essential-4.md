@@ -14,8 +14,8 @@
 ```C++
 // find element in binary search tree, iterative style
 template<typename T>
-__tree_node <T>* find_elem_in_bst(__tree_node <T>* tree, const T& value) {
-    __tree_node <T>* curr = tree;
+tree_node <T>* find_elem_in_bst(tree_node <T>* tree, const T& value) {
+    tree_node <T>* curr = tree;
     while (curr) {
         if (value == curr->value) {
             return curr;
@@ -31,7 +31,7 @@ __tree_node <T>* find_elem_in_bst(__tree_node <T>* tree, const T& value) {
 
 // find element in binary search tree, recursive style
 template<typename T>
-__tree_node <T>* find_elem_in_bst_recursion(__tree_node <T>* tree, const T& value) {
+tree_node <T>* find_elem_in_bst_recursion(tree_node <T>* tree, const T& value) {
     if (tree == NULL || value == tree->value) {
         return tree;
     }
@@ -45,14 +45,14 @@ __tree_node <T>* find_elem_in_bst_recursion(__tree_node <T>* tree, const T& valu
 
 // find element in binary random tree, iterative style
 template<typename T>
-__tree_node <T>* find_elem_in_brt(__tree_node <T>* tree, const T& value) {
+tree_node <T>* find_elem_in_brt(tree_node <T>* tree, const T& value) {
     if (tree == NULL) {
         return NULL;
     }
     // it is just a tree traversing problem in iterative style
     // below is a pre-order traversing
-    std::stack<__tree_node <T>*> stack;
-    __tree_node <T>* curr = tree;
+    std::stack<tree_node <T>*> stack;
+    tree_node <T>* curr = tree;
     while (curr || !stack.empty()) {
         while (curr) {
             if (value == curr->value) {
@@ -70,17 +70,16 @@ __tree_node <T>* find_elem_in_brt(__tree_node <T>* tree, const T& value) {
     return NULL;
 }
 
-// find element in binary search tree, recursive style
+// find element in binary search tree, iterative style
 template<typename T>
-__tree_node <T>* find_elem_in_brt_recursion(__tree_node <T>* tree, const T& value) {
+tree_node <T>* find_elem_in_brt_recursion(tree_node <T>* tree, const T& value) {
     if (tree == NULL || value == tree->value) {
         return tree;
     }
-    __tree_node <T>* result = find_elem_in_brt_recursion(tree->left, value);
+    tree_node <T>* result = find_elem_in_brt_recursion(tree->left, value);
     if (result) {
         return result;
     }
     return find_elem_in_brt_recursion(tree->right, value);
 }
 ```
-
