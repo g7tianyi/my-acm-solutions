@@ -1,4 +1,5 @@
-樹問題小結：基礎1
+樹問題小結：大纲、树的创建/拷贝/销毁
+
 ====
 樹的基礎知識我懶得寫了，請直接參考[馬叔叔](http://users.cis.fiu.edu/~weiss/)的書。這裡主要總結關於樹的一些或基本或重要或有趣的問題（不包括高級樹形結構如 [AVL Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/avl-tree.md), [Splay Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/splay-tree.md) 等等），主要包括：
 
@@ -24,7 +25,7 @@
  - **[二叉搜索樹的前驅、後繼問題](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-2.md)**
  - **[元素的查找](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-4.md)**
  - **[元素的刪除](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-4.md)**
- - **二叉搜索樹的最值問題, 以及kMin(), kMax()問題**
+ - **[二叉搜索樹的最值問題](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-2.md), 以及[kMin(), kMax()問題](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-5.md)**
  - **Threaded-Tree的問題（難）**
 
 *還有以後補充...*
