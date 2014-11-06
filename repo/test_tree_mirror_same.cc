@@ -35,8 +35,17 @@ int main() {
 
     std::cout << "tree1 and tree2 is " << (tree::is_mirror(tree1, tree2) ? "" : "not ")
             << "mirror\n";
-    std::cout << "tree1 and tree3 is " << (tree::is_mirror_iterative(tree1, tree2) ? "" :
+    std::cout << "tree1 and tree3 is " << (tree::is_mirror_iterative(tree1, tree3) ? "" :
             "not ") << "mirror\n";
+
+    std::cout << std::endl;
+    std::cout << "tree1 and tree1 is " << (tree::is_same_tree(tree1, tree1) ? "" : "not ")
+            << "same tree\n";
+    std::cout << "tree1 and tree2 is " << (tree::is_same_tree(tree1, tree2) ? "" : "not ")
+            << "same tree\n";
+    std::cout << "tree1 and tree1 is "
+            << (tree::is_same_tree_iterative(tree1, tree1) ? "" : "not ")
+            << "same tree\n";
 
     release_tree(tree3);
     release_tree(tree2);
