@@ -31,22 +31,20 @@
 ###編程實現
 
 ```C++
-//
 // in theory, predecessor and successor also has 3 types:
-//  1) pre-order predecessor and successor
-//  2) in-order predecessor and successor
-//  3) post-order predecessor and successor
+// 1) pre-order predecessor and successor
+// 2) in-order predecessor and successor
+// 3) post-order predecessor and successor
+//
 // in practical, in-order predecessor and successor is of highest value
 // since the deletion operation depends on it
-//
-
 
 // find the predecessor of the specified value
 // the value must be in the tree, otherwise we return NULL
 template<typename T>
-__tree_node <T>* predecessor_in_bst(__tree_node <T>* tree, const T& value) {
-    __tree_node <T>* curr = tree; // curr and parent pointer
-    std::deque<__tree_node <T>*> ancestors;
+tree_node <T>* predecessor_in_bst(tree_node <T>* tree, const T& value) {
+    tree_node <T>* curr = tree; // curr and parent pointer
+    std::deque<tree_node <T>*> ancestors;
     ancestors.push_back(NULL);
     while (curr) {
         if (value == curr->value) {
@@ -76,7 +74,7 @@ __tree_node <T>* predecessor_in_bst(__tree_node <T>* tree, const T& value) {
         return curr;
     } else {
         // has no left child
-        __tree_node <T>* parent = ancestors.back();
+        tree_node <T>* parent = ancestors.back();
         ancestors.pop_back();
         while (parent && parent->right != curr) {
             curr = parent;
@@ -90,9 +88,9 @@ __tree_node <T>* predecessor_in_bst(__tree_node <T>* tree, const T& value) {
 // find the successor of the specified value
 // the value must be in the tree, otherwise we return NULL
 template<typename T>
-__tree_node <T>* successor_in_bst(__tree_node <T>* tree, const T& value) {
-    __tree_node <T>* curr = tree; // curr and parent pointer
-    std::deque<__tree_node <T>*> ancestors;
+tree_node <T>* successor_in_bst(tree_node <T>* tree, const T& value) {
+    tree_node <T>* curr = tree; // curr and parent pointer
+    std::deque<tree_node <T>*> ancestors;
     ancestors.push_back(NULL);
     while (curr) {
         if (value == curr->value) {
@@ -120,7 +118,7 @@ __tree_node <T>* successor_in_bst(__tree_node <T>* tree, const T& value) {
         }
         return curr;
     } else {
-        __tree_node <T>* parent = ancestors.back();
+        tree_node <T>* parent = ancestors.back();
         ancestors.pop_back();
         while (parent && parent->left != curr) {
             curr = parent;
@@ -174,7 +172,7 @@ LeetCode: [Validate Binary Search Tree](https://github.com/g7tianyi/my-acm-solut
 
 ```C++
 template<typename T>
-__tree_node <T>* max_elem(__tree_node <T>* tree) {
+tree_node <T>* max_elem(tree_node <T>* tree) {
     while (tree && tree->right) {
         tree = tree->right;
     }
@@ -182,7 +180,7 @@ __tree_node <T>* max_elem(__tree_node <T>* tree) {
 }
 
 template<typename T>
-__tree_node <T>* min_elem(__tree_node <T>* tree) {
+tree_node <T>* min_elem(tree_node <T>* tree) {
     while (tree && tree->left) {
         tree = tree->left;
     }
@@ -197,7 +195,7 @@ __tree_node <T>* min_elem(__tree_node <T>* tree) {
 
 ```C++
 template<typename T>
-bool validate_bst(__tree_node <T>* tree, const T& min_elem, const T& max_elem) {
+bool validate_bst(tree_node <T>* tree, const T& min_elem, const T& max_elem) {
     if (tree == NULL) {
         return true;
     }
@@ -212,10 +210,10 @@ bool validate_bst(__tree_node <T>* tree, const T& min_elem, const T& max_elem) {
 
 // in order traverse, the in order sequence should be ordered
 template<typename T>
-bool validate_bst(__tree_node <T>* tree) {
-    std::deque<__tree_node <T>*> queue;
-    std::stack<__tree_node <T>*> stack;
-    __tree_node <T>* curr = tree;
+bool validate_bst(tree_node <T>* tree) {
+    std::deque<tree_node <T>*> queue;
+    std::stack<tree_node <T>*> stack;
+    tree_node <T>* curr = tree;
     while (curr || !stack.empty()) {
         while (curr) {
             stack.push(curr);
@@ -230,9 +228,9 @@ bool validate_bst(__tree_node <T>* tree) {
     }
 
     if (!queue.empty()) {
-        __tree_node <T>* prev = queue.front();
+        tree_node <T>* prev = queue.front();
         queue.pop_front();
-        while(!queue.empty()) {
+        while (!queue.empty()) {
             curr = queue.front();
             if (curr->value < prev->value) {
                 return false;
