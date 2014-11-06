@@ -20,7 +20,7 @@
 ##編程實現
 ```C++
 template<typename T>
-unsigned count_leaf_node(__tree_node <T>* tree) {
+unsigned count_leaf_node(tree_node <T>* tree) {
     if (tree) {
         if (tree->left == NULL && tree->right == NULL) {
             return 1;
@@ -32,7 +32,7 @@ unsigned count_leaf_node(__tree_node <T>* tree) {
 }
 
 template<typename T>
-unsigned count_all_node(__tree_node <T>* tree) {
+unsigned count_all_node(tree_node <T>* tree) {
     if (tree) {
         return count_all_node(tree->left) + count_all_node(tree->right) + 1;
     }
@@ -48,16 +48,16 @@ LeetCode [minimum depth](https://oj.leetcode.com/problems/minimum-depth-of-binar
 
 ```C++
 template<typename T>
-unsigned min_depth(__tree_node <T>* tree) {
+unsigned min_depth(tree_node <T>* tree) {
     if (tree == NULL) {
         return 0;
     }
 
-    std::deque<__tree_node <T>*> queue;
+    std::deque<tree_node <T>*> queue;
     queue.push_back(tree), queue.push_back(NULL);
     unsigned depth = 1;
     while (!queue.empty()) {
-        __tree_node <T>* curr = queue.front();
+        tree_node <T>* curr = queue.front();
         queue.pop_front();
 
         if (curr) {
@@ -84,7 +84,7 @@ unsigned min_depth(__tree_node <T>* tree) {
 // 1) try BFS
 // 2) simulate recursion with stack
 template<typename T>
-unsigned max_depth(__tree_node <T>* tree) {
+unsigned max_depth(tree_node <T>* tree) {
     if (tree == NULL) {
         return 0;
     }
@@ -96,10 +96,10 @@ unsigned max_depth(__tree_node <T>* tree) {
 // iterative style of max_depth
 // simulate in-order traverse
 template<typename T>
-unsigned max_depth_iteration(__tree_node <T>* tree) {
-    std::stack<__tree_node<T>*> node_stack;
+unsigned max_depth_iteration(tree_node <T>* tree) {
+    std::stack<tree_node <T>*> node_stack;
     std::stack<unsigned> depth_stack;
-    __tree_node <T>* curr = tree;
+    tree_node <T>* curr = tree;
     int depth = 1, result = 0;
     while (curr || !node_stack.empty()) {
         while (curr) {
@@ -126,7 +126,7 @@ unsigned max_depth_iteration(__tree_node <T>* tree) {
 
 typedef tree::default_value_type value_type;
 
-tree::__tree_node<value_type>* __test_create_tree(std::vector<value_type>& vec,
+tree::tree_node<value_type>* __test_create_tree(std::vector<value_type>& vec,
         tree::binary_tree_type treeType) {
     if (treeType == tree::BINARY_RANDOM_TREE) {
         return tree::create_tree(vec.begin(), vec.end());
@@ -145,7 +145,7 @@ int main() {
         vec.push_back(tree::random_tree_value());
     }
 
-    tree::__tree_node<value_type>* tree = __test_create_tree(vec,
+    tree::tree_node<value_type>* tree = __test_create_tree(vec,
             tree::BINARY_RANDOM_TREE);
 
     std::cout << tree::max_depth(tree) << std::endl;
