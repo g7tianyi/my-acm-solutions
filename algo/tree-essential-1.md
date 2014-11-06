@@ -1,4 +1,4 @@
-樹問題小結：大纲、树的创建/拷贝/销毁
+樹問題小結：大綱，樹的創建/拷貝/銷燬
 ====
 
 樹的基礎知識我懶得寫了，請直接參考[馬叔叔](http://users.cis.fiu.edu/~weiss/)的書。這裡主要總結關於樹的一些或基本或重要或有趣的問題（不包括高級樹形結構如 [AVL Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/avl-tree.md), [Splay Tree](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/splay-tree.md) 等等），主要包括：
@@ -7,7 +7,7 @@
     * 建隨機樹
     * 建二叉搜索樹
  - **樹的銷燬**
- - **[樹的遍歷](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-traverse.md)**
+ - **[樹的遍歷](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-7.md)**
      * 前序 (遞歸/非遞歸)
      * 中序 (遞歸/非遞歸)
      * 後序 (遞歸/非遞歸)
