@@ -70,7 +70,7 @@ bool is_mirror_iterative(tree_node<T>* tree1, tree_node<T>* tree2) {
 
 ###生成一棵樹的鏡像
 
-還是樹的遍歷問題，所以左邊鏈接里的內容實在是太重要了。
+還是[樹的遍歷問題](https://github.com/g7tianyi/my-acm-solutions/edit/master/algo/tree-essential-6.md)，所以左邊鏈接里的內容實在是太重要了。
 
 年紀大＋懶＝直接貼代碼
 
