@@ -20,7 +20,7 @@
  - **[樹的節點數問題](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-3.md)**
       * 計算葉子結點的數目
       * 計算非葉子結點的數目
- - **樹的最小深度與最大深度問題**
+ - **[樹的最小深度與最大深度問題](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-3.md)**
  - **[二叉搜索樹的合法性檢查](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-2.md)**
  - **[二叉搜索樹的前驅、後繼問題](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-2.md)**
  - **[元素的查找](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/tree-essential-4.md)**
@@ -399,5 +399,3 @@ int main() {
 ```
 
 *未完待續...*
-
-
