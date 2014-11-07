@@ -126,6 +126,34 @@ void selection_sort(ForwardIterator first, ForwardIterator last, Compare compare
     }
 }
 
+void counting_sort(std::vector<int>& coll) {
+    if (coll.empty() || coll.size() == 1) {
+        return;
+    }
+
+    typedef std::vector<int>::size_type size_type;
+    int max_value = *(coll.begin()), min_value = *(coll.begin());
+    for (size_type i = 0; i < coll.size(); ++i) {
+        if (max_value < coll[i]) {
+            max_value = coll[i];
+        }
+        if (min_value > coll[i]) {
+            min_value = coll[i];
+        }
+    }
+
+    std::vector<int> bucket(max_value - min_value + 1, 0);
+    for (size_type i = 0; i < coll.size(); ++i) {
+        ++bucket[coll[i] - min_value];
+    }
+    for (size_type i = 0, j = 0; i < bucket.size(); ++i) {
+        while (bucket[i]--) {
+            coll[j++] = i + min_value;
+        }
+    }
+}
+
+
 } // end of namespace sort
 
 #include <algorithm>
