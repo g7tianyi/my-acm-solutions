@@ -411,7 +411,6 @@ bool validate_bst(tree_node <T>* tree) {
     return true;
 }
 
-//
 // in theory, predecessor and successor also has 3 types:
 //  1) pre-order predecessor and successor
 //  2) in-order predecessor and successor
@@ -589,41 +588,237 @@ bool is_mirror(tree_node<T>* tree1, tree_node<T>* tree2) {
 
 template<typename T>
 bool is_mirror_iterative(tree_node<T>* tree1, tree_node<T>* tree2) {
-    std::deque<tree_node<T>*> queue1, queue2;
-    queue1.push_back(tree1);
-    queue2.push_back(tree2);
-    tree_node<T> *curr1, *curr2;
+    std::stack<tree_node<T>*> stack1, stack2;
+    tree_node<T> *curr1 = tree1, *curr2 = tree2;
 
-    while (!queue1.empty()) {
-        curr1 = queue1.front();
-        queue1.pop_front();
-        curr2 = queue2.front();
-        queue2.pop_front();
-
-        if (curr1 == NULL && curr2 == NULL) {
-            continue;
+    while (curr1 || curr2 || !stack1.empty()) {
+        while (curr1 || curr2) {
+            if (curr1 == NULL && curr2 != NULL) {
+                return false;
+            }
+            if (curr1 != NULL && curr2 == NULL) {
+                return false;
+            }
+            if (curr1->value != curr2->value) {
+                return false;
+            }
+            stack1.push(curr1);
+            stack2.push(curr2);
+            curr1 = curr1->left;
+            curr2 = curr2->right;
         }
-
-        if (curr1 == NULL && curr2 != NULL) {
-            return false;
+        if (!stack1.empty()) {
+            curr1 = stack1.top();
+            curr2 = stack2.top();
+            stack1.pop();
+            stack2.pop();
+            curr1 = curr1->right;
+            curr2 = curr2->left;
         }
-        if (curr1 != NULL && curr2 == NULL) {
-            return false;
-        }
-        if (curr1->value != curr2->value) {
-            return false;
-        }
-
-        queue1.push_back(curr1->left);
-        queue2.push_back(curr2->right);
-
-        queue1.push_back(curr1->right);
-        queue2.push_back(curr2->left);
     }
 
     return true;
 }
 
+template<typename T>
+bool is_same_tree(tree_node<T>* tree1, tree_node<T>* tree2) {
+    if (tree1 == NULL && tree2 == NULL) {
+        return true;
+    }
+    if (tree1 == NULL && tree2 != NULL) {
+        return false;
+    }
+    if (tree1 != NULL && tree2 == NULL) {
+        return false;
+    }
+    return tree1->value == tree2->value
+            && is_same_tree(tree1->left, tree2->left)
+            && is_same_tree(tree1->right, tree2->right);
+}
+
+template<typename T>
+bool is_same_tree_iterative(tree_node<T>* tree1, tree_node<T>* tree2) {
+    std::stack<tree_node<T>*> stack1, stack2;
+    tree_node<T> *curr1 = tree1, *curr2 = tree2;
+
+    while (curr1 || curr2 || !stack1.empty()) {
+        while (curr1 || curr2) {
+            if (curr1 == NULL && curr2 != NULL) {
+                return false;
+            }
+            if (curr1 != NULL && curr2 == NULL) {
+                return false;
+            }
+            if (curr1->value != curr2->value) {
+                return false;
+            }
+            stack1.push(curr1);
+            stack2.push(curr2);
+            curr1 = curr1->left;
+            curr2 = curr2->left;
+        }
+        if (!stack1.empty()) {
+            curr1 = stack1.top();
+            curr2 = stack2.top();
+            stack1.pop();
+            stack2.pop();
+            curr1 = curr1->right;
+            curr2 = curr2->right;
+        }
+    }
+
+    return true;
+}
+
+template<typename T>
+bool exists_node(tree_node<T>* tree, tree_node<T>* node) {
+    if (tree == NULL || node == NULL) {
+        return false;
+    }
+    if (tree == node) {
+        return true;
+    }
+    return tree == node
+            || exists_node(tree->left, node)
+            || exists_node(tree->right, node);
+}
+
+// very inefficienct
+template<typename T>
+tree_node<T>* least_common_ancestor(tree_node<T>* tree, tree_node<T>* node1,
+        tree_node<T>* node2) {
+    if (exists_node(tree->left, node1)) {
+        if (exists_node(tree->right, node2)) {
+            return tree;
+        } else {
+            return least_common_ancestor(tree->left, node1, node2);
+        }
+    } else {
+        if (exists_node(tree->left, node2)) {
+            return tree;
+        } else {
+            return least_common_ancestor(tree->right, node1, node2);
+        }
+    }
+}
+
+template<typename T>
+bool get_node_path(tree_node<T>* tree, tree_node<T>* node,
+        std::deque<tree_node<T>*> path) {
+    if (tree == node) {
+        path.push_back(tree);
+    }
+    if (tree == NULL) {
+        return false;
+    }
+    path.push_back(tree);
+    bool found = get_node_path(tree->left, node, path);
+    if (!found) {
+        found = get_node_path(tree->right, node, path);
+    }
+    if (!found) {
+        path.pop_back();
+    }
+    return found;
+}
+
+template<typename T>
+tree_node<T>* least_common_ancestor_iteration(tree_node<T>* tree, tree_node<T>* node1,
+        tree_node<T>* node2) {
+    if (tree == NULL || node1 == NULL || node2 == NULL) {
+        return NULL;
+    }
+    std::deque<tree_node<T>*> path1;
+    bool found1 = get_node_path(tree, node1, path1);
+    std::deque<tree_node<T>*> path2;
+    bool found2 = get_node_path(tree, node2, path2);
+    if (!found1 || !found2) {
+        return NULL;
+    }
+
+    tree_node<T>* result = tree;
+    std::deque<tree_node<T>*>::const_iterator pos1 = path1.begin();
+    std::deque<tree_node<T>*>::const_iterator pos2 = path2.begin();
+    while (pos1 != path1.end() && pos2 != path2.end()) {
+        if (*pos1 == *pos2) {
+            result = *pos1;
+        } else {
+            break;
+        }
+        ++pos1, ++pos2;
+    }
+
+    return result;
+}
+
+// get the max distance of two node in a tree
+template<typename T>
+void max_distance(tree_node<T>* tree, int& distance, int& depth) {
+    if (tree == NULL) {
+        distance = 0, depth = -1;
+        return;
+    }
+
+    int left_max_distance = 0;
+    int left_max_depth = 0;
+    max_distance(tree->left, left_max_distance, left_max_depth);
+
+    int right_max_distance = 0;
+    int right_max_depth = 0;
+    max_distance(tree->right, right_max_distance, right_max_depth);
+
+    depth = std::max(left_max_depth, right_max_depth) + 1;
+    distance = std::max(std::max(left_max_distance, right_max_distance),
+            left_max_depth + right_max_depth + 2);
+}
+
+template<typename T>
+int max_distance(tree_node<T>* tree) {
+    int distance = 0, depth = 0;
+    max_distance(tree, distance, depth);
+    return distance;
+}
+
+// check is a tree is a complete binary tree
+template<typename T>
+bool is_complete_tree(tree_node<T>* tree) {
+    if (tree == NULL) {
+        return false;
+    }
+
+    std::deque<tree_node<T>*> queue;
+    queue.push_back(tree);
+
+    bool should_be_leaf = false;
+    bool result = true;
+
+    while (!queue.empty()) {
+        tree_node<T>* node = queue.front();
+        queue.pop_front();
+
+        if (should_be_leaf) {
+            if (node->left || node->right) {
+                result = false;
+                break;
+            }
+        } else {
+            if (node->left && node->right) {
+                queue.push_back(node->left);
+                queue.push_back(node->right);
+            } else if (node->left && !node->right) {
+                should_be_leaf = true;
+                queue.push(node->left);
+            } else if (!node->left && node->right) {
+                result = false;
+                break;
+            } else {
+                should_be_leaf = true;
+            }
+        }
+    }
+
+    return result;
+}
 
 
 // release a tree
@@ -642,4 +837,3 @@ void release_tree(tree_node <T>* tree) {
 }
 
 } // end of namespace tree
-
