@@ -5,6 +5,8 @@
 - Shell排序
 - 冒泡排序
 - 選擇排序
+- 計數排序
+- 桶排序
 
 ##快速排序
 
@@ -163,5 +165,48 @@ void selection_sort(ForwardIterator first, ForwardIterator last, Compare compare
     }
 }
 ```
+
+##計數排序
+
+如果給一個分佈於區間[min, max)的隨機序列排序，可以考慮使用計數排序。**max-min 越小說明分佈越集中，此時使用計數排序效果就越好**。計數排序是一種穩定的排序算法。一般而言，計數排序的時間複雜度為O(n)，空間複雜度O(n)，從理論上來看，它比時間複雜度O(nlogn)的算法明顯快一些。
+
+計數排序有自己特定的應用場合，所以也不好泛化。
+
+```C++
+void counting_sort(std::vector<int>& coll) {
+    if (coll.empty() || coll.size() == 1) {
+        return;
+    }
+
+    typedef std::vector<int>::size_type size_type;
+    int max_value = *(coll.begin()), min_value = *(coll.begin());
+    for (size_type i = 0; i < coll.size(); ++i) {
+        if (max_value < coll[i]) {
+            max_value = coll[i];
+        }
+        if (min_value > coll[i]) {
+            min_value = coll[i];
+        }
+    }
+
+    std::vector<int> bucket(max_value - min_value + 1, 0);
+    for (size_type i = 0; i < coll.size(); ++i) {
+        ++bucket[coll[i] - min_value];
+    }
+    for (size_type i = 0, j = 0; i < bucket.size(); ++i) {
+        while (bucket[i]--) {
+            coll[j++] = i + min_value;
+        }
+    }
+}
+```
+
+##桶排序
+
+當待排序的隨機序列密集的分佈於一個狹窄區間時，使用計數排序速度比較快，當待排序的隨機序列比較均勻的分佈於一個較寬區間時，可以考慮使用桶排序。
+
+桶排序的時間複雜度為O(n)，空間複雜度也為O(n)。**既然一個待排序的隨機序列比較均勻的分佈於一個區間，就很容易散列到各個桶中**。假設有N個元素比較均勻的散列到M個桶中，則每個桶中的元素數目約為N / M，可以使用普通排序算法對每個桶中的元素排序，排序完畢後再把所有元素複製到最初序列的位置覆蓋原始序列。
+
+桶排序其實實際應用價值不大，有價值的是它的思想──不過好像很多東西都這樣，有哈希的感覺。
 
 *未完待續*
