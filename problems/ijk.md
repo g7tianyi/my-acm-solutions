@@ -1,11 +1,10 @@
 长度为3的不连续有序子序列问题
 ====
 
-給定一個長度為n的數列，求三元組(Ai, Aj, Ak)的個數，滿足
+給定一個長度為```n```的數列，求三元組(A<sub>i</sub>, A<sub>j</sub>, A<sub>k</sub>)的個數，滿足
 
-- ```i < j < k```
-- ```Ai < Aj, Ak < Aj```
-
+- i < j < k
+- A<sub>i</sub> < A<sub>j</sub>, A<sub>k</sub> < A<sub>j</sub>
 
 ##解法
 
