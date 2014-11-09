@@ -1,17 +1,23 @@
 长度为3的不连续有序子序列问题
 ====
 
-注意这里的有序，指结果中的序列符合要求的顺序，不一定是从小到大 给你一个序列A，比如 1 2 3 4 1 求三个元素 Ai Aj Ak 满足 Ai < Aj Ak < Aj, i < j < k 算一下一共有多少种取法 1 2 3 4 1 一共6种取法
+給定一個長度為n的數列，求三元組(Ai, Aj, Ak)的個數，滿足
+
+- ```i < j < k```
+- ```Ai < Aj, Ak < Aj```
+
 
 ##解法
 
-> [DFS思路 by kenny](https://github.com/philoprove/revolutionary-road/blob/master/mind-garden/ijk.md)
+> [kenny的解法](https://github.com/philoprove/revolutionary-road/blob/master/mind-garden/ijk.md)
 
-> [枚举思路 by kevin](https://github.com/chen8913w/Algo/blob/master/src/org/practice/middle/large/MiddleLargeNaive.java)
+> [kevin的解法](https://github.com/chen8913w/Algo/blob/master/src/org/practice/middle/large/MiddleLargeOptimize.java)
 
-我的思路一个是DP，```prev[i]```记录前面比```arr[i]```小的，```next[i]```记录后面比```arr[i]```小的，从下面的实现可以看出，这个复杂度是```O(n^2)```。
+我的第一個思路基於動態規劃。```prev[i]```记录前面比```arr[i]```小的，```next[i]```记录后面比```arr[i]```小的，从下面的实现可以看出，这个复杂度是```O(n^2)```，kevin的代碼還把```prev```和```next```的空間開銷優化了，很好~
 
-另外其实可以用树的思路来思考。模拟树的插入过程，对于序列```1 2 3 4 1```，依次插入一颗二叉排序树，一旦当前节点往右走，意味着当前节点的```prev```值就加```1```。那么怎么得到```next```值呢？其实逆序再插入一颗新的树就可以了，其实可以达到```O(nlogn)```的复杂度。
+另外其实可以用树的思路来思考。模拟树的插入过程，对于序列```1 2 3 4 1```，設想各個元素依次插入一颗二叉排序树，一旦当前节点往右走，意味着当前节点的```prev```值就加```1```。那么怎么得到```next```值呢？其实逆序再插入一颗新的树就可以了。對於隨機數據，可以逼近```O(nlogn)```的复杂度，最壞情況是```O(n^2)```。
+
+還有誰可以想到線性複雜度的算法嗎？
 
 ```C++
 // dp
