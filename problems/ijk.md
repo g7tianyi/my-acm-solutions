@@ -6,11 +6,12 @@
 ##解法
 
 > [DFS思路 by kenny](https://github.com/philoprove/revolutionary-road/blob/master/mind-garden/ijk.md)
+
 > [枚举思路 by kevin](https://github.com/chen8913w/Algo/blob/master/src/org/practice/middle/large/MiddleLargeNaive.java)
 
-我的思路一个是DP，prev记录前面比arr[i]小的，next[i]记录后面比arr[i]小的，从下面的实现可以看出，这个复杂度是O(N^2)。
+我的思路一个是DP，```prev```记录前面比```arr[i]```小的，```next[i]```记录后面比```arr[i]```小的，从下面的实现可以看出，这个复杂度是```O(n^2)```。
 
-另外其实可以用树的思路来思考。模拟树的插入过程，对于序列```1 2 3 4 1```，依次插入一颗二叉排序树，一旦当前节点往右走，意味着当前节点的prev值就加1。那么怎么得到next值呢？其实逆序再插入一颗新的数就可以了，考虑树要是平衡书话，其实可以达到O(nlogn)的复杂度。
+另外其实可以用树的思路来思考。模拟树的插入过程，对于序列```1 2 3 4 1```，依次插入一颗二叉排序树，一旦当前节点往右走，意味着当前节点的```prev```值就加```1```。那么怎么得到```next```值呢？其实逆序再插入一颗新的数就可以了，考虑树要是平衡树的话，其实可以达到```O(nlogn)```的复杂度。
 
 
 ```C++
