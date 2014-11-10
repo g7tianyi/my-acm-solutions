@@ -16,7 +16,7 @@
 
 ##编程实现
 
-斜堆與左式堆很像，實現也很像，斜堆還簡單一些。
+斜堆與[左式堆](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/heap-summary-leftist-heap.md)很像，實現也很像，斜堆還簡單一些。
 
 ```C++
 #include <functional>
