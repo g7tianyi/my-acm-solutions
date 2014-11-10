@@ -1,4 +1,4 @@
-堆小結：左式堆
+堆小結之：左式堆
 ====
 
 基本的[二叉堆](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/heap-summary-binary-heap.md)簡單優雅好理解，不過涉及到合併操作時效率不太令人滿意，二叉堆要完成**合併**，其實就是把一個堆中的元素一一```pop```出來在```push```到另一個堆裡面去。
