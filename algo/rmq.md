@@ -1,6 +1,7 @@
 RMQ問題的實現範例
 ---
 > 致謝： http://noalgo.info/489.html
+
 ```C++
 enum QueryType {
     QUERT_MAX, QUERY_MIN
@@ -58,7 +59,8 @@ private:
     int minValue[MAX_COW][20];
 };
 ```
-練習題
-----
+
+##練習題
+
 > POJ [2452](http://poj.org/problem?id=2452), [3264](http://poj.org/problem?id=3264)
 
