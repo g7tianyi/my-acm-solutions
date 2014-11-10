@@ -10,7 +10,9 @@
 2. 如果兩個斜堆都非空，那麼比較兩個根節點，取較小堆的根節點為新的根節點。將較小堆的根節點的右孩子和較大堆合併
 3. 合併後，交換新堆根節點的左孩子和右孩子
 
-最後一步是斜堆和左傾堆的合併操作差別的關鍵所在，如果是左傾堆，則合併後要比較左右孩子的零距離大小，若右孩子的NPL大於左孩子的NPL，則交換左右孩子，最後再設置根的零距離。
+![skew-heap-merge-1.png](https://github.com/g7tianyi/my-acm-solutions/blob/master/images/skew-heap-1.png)
+
+![skew-heap-merge-2.png](https://github.com/g7tianyi/my-acm-solutions/blob/master/images/skew-heap-2.png)
 
 ##编程实现
 
