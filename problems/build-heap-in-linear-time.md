@@ -4,7 +4,9 @@
 By [Mark Allen Weiss](http://users.cis.fiu.edu/~weiss/)
 
 > Write a program to take N elements and do the following:
+
 > a. Insert them into a heap one by one.
+
 > b. Build a heap in linear time.
 
 第一問在[這裡](https://github.com/g7tianyi/my-acm-solutions/blob/master/algo/heap-summary-binary-heap.md)。第二問其實CLRS裡面也有，所以不多說，關鍵是證明O(n)的複雜度。
