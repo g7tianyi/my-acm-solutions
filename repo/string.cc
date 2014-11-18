@@ -247,6 +247,9 @@ char* strtok(char* src, const char* delim) {
  * return haystack if needle is empty, otherwise null if needle is not found in haystack.
  */
 char* strstr(const char* haystack, const char* needle) {
+    if (haystack == NULL || needle == NULL) {
+        return NULL;
+    }
     const char* ph = haystack;
     const char* pn = needle;
     do {
