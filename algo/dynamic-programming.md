@@ -25,6 +25,8 @@
 
 > - [POJ 3624](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/dynamic-programming/poj3624.cc)
 
+> - [POJ 2184](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/dynamic-programming/poj2184.cc)，很好啊，这个题抽象出来的空间可以为负，需要一些特殊处理，挺有意思的~
+
 > 完全背包
 
 > - [POJ 1384](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/dynamic-programming/poj1384.cc)，很好呀~
