@@ -15,7 +15,10 @@
 
 至於訓練題，以前做了一些，不記得了...
 
-> 0-1背包： [POJ 1015](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj1015.cc)， [POJ 1745](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj1745.cc)， [POJ 3628](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj3268.cc) 
+> 0-1背包：[POJ 1015](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj1015.cc)， [POJ 1745](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj1745.cc)， [POJ 3628](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/DP/poj3268.cc) 
+
+> 完全背包：[POJ 1384](https://github.com/g7tianyi/my-acm-solutions/blob/master/poj/dynamic-programming/poj1384.cc)，很好呀~
+
 
 ###字符串相關的DP問題
 
