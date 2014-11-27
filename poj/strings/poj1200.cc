@@ -2,6 +2,7 @@
  * POJ 1200, Crazy Search
  * string-hash + rabin-karp-algo
  */
+ 
 #include <cstring>
 #include <cstdio>
 #include <cmath>
