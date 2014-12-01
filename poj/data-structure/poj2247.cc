@@ -15,7 +15,7 @@ std::priority_queue<long long, std::vector<long long>, std::greater<long long> >
 std::vector<long long> result;
 std::set<long long> appeared;
 
-// stupid output... boring
+// boring output... 
 inline void output(int pos, long long result) {
     if (pos % 10 == 1 && pos % 100 != 11) {
         printf("The %dst humble number is %lld.\n", pos, result);
